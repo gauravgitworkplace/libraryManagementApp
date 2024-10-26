@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">LibraryManagementSystem</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_userpassword">Enter password</string>
+    <string name="login_here">Login Here</string>
+    <string name="user_login">User Login</string>
+    <string name="enter_author_name">Enter Author Name</string>
+    <string name="enter_title">Enter Title</string>
+    <string name="enter_price">Enter Price</string>
+    <string name="enter_category">Enter Category</string>
+    <string name="enter_edition">Enter Edition</string>
+    <string name="enter_isbn">Enter ISBN</string>
+    <string name="enter_book_details">Enter Book Details</string>
+    <string name="submit_details">Submit Details</string>
+    <string name="author_name">Author Name</string>
+    <string name="price">Price</string>
+    <string name="category">Category</string>
+    <string name="edition">Edition</string>
+    <string name="book_title">Book Title</string>
+    <string name="isbn">ISBN</string>
+    <string name="s_no">S.No</string>
+    <string name="subject">Subject</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="perform_actions">Perform Actions</string>
+    <string name="rupay_symbol"><string name="Rs">\u20B9</string></string>
+    <string name="search_books">Search Books</string>
+    <string name="enter_book_title_or_auther_name_or_subject_name">Enter the Name of Book Title/Auther/Subject</string>
+</resources>
