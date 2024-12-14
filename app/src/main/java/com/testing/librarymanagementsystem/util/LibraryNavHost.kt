@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.testing.librarymanagementsystem.feature.adminsignup.SignUpScreen
 import com.testing.librarymanagementsystem.feature.bookdetails.BookDetailsScreen
 import com.testing.librarymanagementsystem.feature.login.LoginScreen
 import com.testing.librarymanagementsystem.feature.searchscreeen.SearchBookScreen
@@ -13,7 +14,7 @@ import com.testing.librarymanagementsystem.viewmodels.LoginViewModel
 
 @Composable
 fun LibraryNavHost(navController: NavHostController, loginViewModel: LoginViewModel) {
-    NavHost(navController = navController, startDestination = Screens.BookDetails.route) {
+    NavHost(navController = navController, startDestination = Screens.AdminSignUp.route) {
         composable(Screens.Splash.route) { SplashScreen(onTimeout = {}) }
         composable(Screens.Login.route) {
             LoginScreen(
@@ -37,5 +38,12 @@ fun LibraryNavHost(navController: NavHostController, loginViewModel: LoginViewMo
             )
         }
         composable(Screens.SearchedBookList.route) { SearchBookScreen(navController = navController) }
+        composable(Screens.AdminSignUp.route) {
+            SignUpScreen(
+                onSignUp = {},
+                onBack = {},
+                navController = navController
+            )
+        }
     }
 }
