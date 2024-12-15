@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.testing.librarymanagementsystem.feature.adminsignup.SignUpScreen
 import com.testing.librarymanagementsystem.feature.login.LoginScreen
 import com.testing.librarymanagementsystem.feature.splash.SplashScreen
 import com.testing.librarymanagementsystem.ui.theme.LibraryManagementSystemTheme
@@ -39,14 +40,7 @@ class MainActivity : ComponentActivity() {
         if (isSplashVisible) {
             SplashScreen(onTimeout = { isSplashVisible = false })
         } else {
-            LoginScreen(
-                navController,
-                modifier = Modifier,
-                onClick = {
-                    loginViewModel.login()
-                },
-                loginViewModel = loginViewModel
-            )
+            SignUpScreen(onSignUp = {}, onBack = { }, navController = navController)
         }
     }
 

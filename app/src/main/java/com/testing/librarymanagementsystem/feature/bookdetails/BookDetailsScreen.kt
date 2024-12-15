@@ -40,6 +40,7 @@ import com.testing.librarymanagementsystem.util.CommonUI.CommonText
 import com.testing.librarymanagementsystem.util.CommonUI.CommonTextField
 import com.testing.librarymanagementsystem.util.CommonUI.customShape
 import com.testing.librarymanagementsystem.util.CustomShape
+import com.testing.librarymanagementsystem.util.ParsingData
 import com.testing.librarymanagementsystem.util.Screens
 import com.testing.librarymanagementsystem.viewmodels.BookViewModel
 import com.testing.librarymanagementsystem.viewmodels.MyViewModelFactory
@@ -56,7 +57,10 @@ fun BookDetailsScreen(
         viewModel(factory = MyViewModelFactory(context.applicationContext))
 
     val jsonString: String = data
-    val jsonObject = JSONObject(jsonString)
+    Log.d("TAG", "newData: $data")
+
+    val jsonObject =
+        JSONObject(if (jsonString == "{itemlist}") ParsingData.defaultString else jsonString)
     val bookList = jsonObject.getJSONObject("booList")
 
     val uidString = bookList.getString("uid")
@@ -153,25 +157,26 @@ fun BookDetailsScreen(
                 shape = customShape(customShape = CustomShape.MiddleContent)
             )
 
-                CommonTextField(
-                    value = bookViewModel.priceeState,
-                    onValueChange = { newText ->
-                        price = bookViewModel.getValidatedNumber(newText)
-                        bookViewModel.updatePriceText(price)
-                    },
-                    label = stringResource(id = R.string.enter_price),
-                    shape = customShape(customShape = CustomShape.MiddleContent),
-                    keyPadOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.Decimal,
-                        imeAction = ImeAction.Next
-                    ),
-                    prefixIcon = {
-                        if (bookViewModel.priceeState.isNotBlank()) Icon(modifier = Modifier.size(18.dp),
-                            painter = painterResource(id = R.drawable.baseline_currency_rupee_24),
-                            contentDescription = ""
-                        )
-                    }
-                )
+            CommonTextField(
+                value = bookViewModel.priceeState,
+                onValueChange = { newText ->
+                    price = bookViewModel.getValidatedNumber(newText)
+                    bookViewModel.updatePriceText(price)
+                },
+                label = stringResource(id = R.string.enter_price),
+                shape = customShape(customShape = CustomShape.MiddleContent),
+                keyPadOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Decimal,
+                    imeAction = ImeAction.Next
+                ),
+                prefixIcon = {
+                    if (bookViewModel.priceeState.isNotBlank()) Icon(
+                        modifier = Modifier.size(18.dp),
+                        painter = painterResource(id = R.drawable.baseline_currency_rupee_24),
+                        contentDescription = ""
+                    )
+                }
+            )
 
             CommonTextField(
                 value = bookViewModel.categoryState,

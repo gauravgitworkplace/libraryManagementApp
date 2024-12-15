@@ -26,4 +26,8 @@
     <string name="rupay_symbol"><string name="Rs">\u20B9</string></string>
     <string name="search_books">Search Books</string>
     <string name="enter_book_title_or_auther_name_or_subject_name">Enter the Name of Book Title/Auther/Subject</string>
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="please_sign_up_here">Please Signup Here</string>
+    <string name="submit_credentials">Submit Credential</string>
 </resources>
