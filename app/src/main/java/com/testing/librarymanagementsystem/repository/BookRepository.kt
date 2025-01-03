@@ -1,7 +1,7 @@
 package com.testing.librarymanagementsystem.repository
 
 import com.testing.librarymanagementsystem.database.BookDetailModel
-import com.testing.librarymanagementsystem.database.LibraryDao
+import com.testing.librarymanagementsystem.database.dao.LibraryDao
 import kotlinx.coroutines.flow.Flow
 
 class BookRepository(private val libraryDao: LibraryDao) {

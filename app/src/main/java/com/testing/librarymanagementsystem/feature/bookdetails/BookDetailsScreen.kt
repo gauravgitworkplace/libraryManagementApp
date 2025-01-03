@@ -43,7 +43,7 @@ import com.testing.librarymanagementsystem.util.CustomShape
 import com.testing.librarymanagementsystem.util.ParsingData
 import com.testing.librarymanagementsystem.util.Screens
 import com.testing.librarymanagementsystem.viewmodels.BookViewModel
-import com.testing.librarymanagementsystem.viewmodels.MyViewModelFactory
+import com.testing.librarymanagementsystem.viewmodels.CommonViewModelFactory
 import org.json.JSONObject
 
 @Composable
@@ -54,7 +54,7 @@ fun BookDetailsScreen(
 ) {
     val context = LocalContext.current
     val bookViewModel: BookViewModel =
-        viewModel(factory = MyViewModelFactory(context.applicationContext))
+        viewModel(factory = CommonViewModelFactory(context.applicationContext))
 
     val jsonString: String = data
     Log.d("TAG", "newData: $data")
@@ -165,7 +165,7 @@ fun BookDetailsScreen(
                 },
                 label = stringResource(id = R.string.enter_price),
                 shape = customShape(customShape = CustomShape.MiddleContent),
-                keyPadOptions = KeyboardOptions(
+                keyBoardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Decimal,
                     imeAction = ImeAction.Next
                 ),
@@ -197,7 +197,7 @@ fun BookDetailsScreen(
                 },
                 label = stringResource(id = R.string.enter_edition),
                 shape = customShape(customShape = CustomShape.MiddleContent),
-                keyPadOptions = KeyboardOptions(
+                keyBoardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Number,
                     imeAction = ImeAction.Next
                 )
@@ -211,7 +211,7 @@ fun BookDetailsScreen(
                 },
                 label = stringResource(id = R.string.enter_isbn),
                 shape = customShape(customShape = CustomShape.BottomContent),
-                keyPadOptions = KeyboardOptions(
+                keyBoardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Number,
                     imeAction = ImeAction.Done
                 )

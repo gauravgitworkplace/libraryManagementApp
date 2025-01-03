@@ -10,17 +10,15 @@ import com.testing.librarymanagementsystem.feature.login.LoginScreen
 import com.testing.librarymanagementsystem.feature.searchscreeen.SearchBookScreen
 import com.testing.librarymanagementsystem.feature.showbooklist.ShowAllBooksListScreen
 import com.testing.librarymanagementsystem.feature.splash.SplashScreen
-import com.testing.librarymanagementsystem.viewmodels.LoginViewModel
 
 @Composable
-fun LibraryNavHost(navController: NavHostController, loginViewModel: LoginViewModel) {
-    NavHost(navController = navController, startDestination = Screens.AdminSignUp.route) {
+fun LibraryNavHost(navController: NavHostController) {
+    NavHost(navController = navController, startDestination = Screens.Login.route) {
         composable(Screens.Splash.route) { SplashScreen(onTimeout = {}) }
         composable(Screens.Login.route) {
             LoginScreen(
                 navController = navController,
-                onClick = { loginViewModel.login() },
-                loginViewModel = loginViewModel
+                onClick = { }
             )
         }
         composable(Screens.BookDetails.route) { backStackEntry ->
@@ -41,7 +39,7 @@ fun LibraryNavHost(navController: NavHostController, loginViewModel: LoginViewMo
         composable(Screens.AdminSignUp.route) {
             SignUpScreen(
                 onSignUp = {},
-                onBack = {},
+                onBack = {navController.popBackStack()},
                 navController = navController
             )
         }

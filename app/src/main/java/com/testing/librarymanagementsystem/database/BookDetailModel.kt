@@ -15,7 +15,9 @@ data class BookDetailModel(
     @ColumnInfo(name = "isbn") val isbn: String
 )
 
-data class AdminLoginCredentials(
-    val adminUserName: String = "user",
-    val adminUserPassword: String = "pass123"
+@Entity
+data class AdminLoginCredentialsModel(
+    @PrimaryKey(autoGenerate = true) val id:Int=0,
+    @ColumnInfo(name = "admin_username") val adminUserName: String,
+    @ColumnInfo(name = "admin_user_password") val adminUserPassword: String
 )

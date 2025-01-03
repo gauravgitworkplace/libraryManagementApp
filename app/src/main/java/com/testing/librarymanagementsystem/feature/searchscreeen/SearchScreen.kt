@@ -39,7 +39,7 @@ import com.testing.librarymanagementsystem.util.CommonUI
 import com.testing.librarymanagementsystem.util.CommonUI.CommonText
 import com.testing.librarymanagementsystem.util.CommonUI.CommonTextField
 import com.testing.librarymanagementsystem.util.CustomShape
-import com.testing.librarymanagementsystem.viewmodels.SearchViewModelFactory
+import com.testing.librarymanagementsystem.viewmodels.CommonViewModelFactory
 
 
 @Composable
@@ -50,7 +50,7 @@ fun SearchBookScreen(navController: NavController) {
     }
 
     val searchBooksViewModel: SearchBooksViewModel =
-        viewModel(factory = SearchViewModelFactory(context.applicationContext))
+        viewModel(factory = CommonViewModelFactory(context.applicationContext))
 
     val bookList by searchBooksViewModel.searchBookLists.collectAsStateWithLifecycle()
 

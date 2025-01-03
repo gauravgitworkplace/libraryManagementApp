@@ -43,13 +43,13 @@ import com.testing.librarymanagementsystem.util.CommonUI.CommonText
 import com.testing.librarymanagementsystem.util.CommonUI.UpdateBookDetailsDialog
 import com.testing.librarymanagementsystem.util.Screens
 import com.testing.librarymanagementsystem.viewmodels.BookViewModel
-import com.testing.librarymanagementsystem.viewmodels.MyViewModelFactory
+import com.testing.librarymanagementsystem.viewmodels.CommonViewModelFactory
 
 @Composable
 fun ShowAllBooksListScreen(navController: NavController, itemList: String) {
     val context = LocalContext.current
     val bookViewModel: BookViewModel =
-        viewModel(factory = MyViewModelFactory(context.applicationContext))
+        viewModel(factory = CommonViewModelFactory(context.applicationContext))
 
 
     val bookList by bookViewModel.bookLists.collectAsStateWithLifecycle()
@@ -75,7 +75,8 @@ fun ShowAllBooksListScreen(navController: NavController, itemList: String) {
                 Icon(
                     modifier = Modifier
                         .align(Alignment.CenterVertically)
-                        .weight(5f).clickable { navController.navigate(Screens.SearchedBookList.route) },
+                        .weight(5f)
+                        .clickable { navController.navigate(Screens.SearchedBookList.route) },
                     painter = painterResource(id = R.drawable.ic_search_24),
                     contentDescription = null,
                     tint = Color.White
@@ -88,6 +89,7 @@ fun ShowAllBooksListScreen(navController: NavController, itemList: String) {
                     textAlign = TextAlign.Start,
                     textColor = Color.Magenta
                 )
+
                 CommonText(
                     modifier = Modifier
                         .padding(horizontal = 2.dp)

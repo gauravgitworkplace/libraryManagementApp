@@ -81,7 +81,7 @@ object CommonUI {
         singleLine: Boolean = true,
         isError: Boolean = false,
         shape: CornerBasedShape = customShape(customShape = CustomShape.MiddleContent),
-        keyPadOptions: KeyboardOptions = KeyboardOptions(
+        keyBoardOptions: KeyboardOptions = KeyboardOptions(
             capitalization = KeyboardCapitalization.Words,
             keyboardType = KeyboardType.Text, imeAction = ImeAction.Next
         ),
@@ -113,7 +113,7 @@ object CommonUI {
                     )
                 }
             },
-            keyboardOptions = keyPadOptions,
+            keyboardOptions = keyBoardOptions,
             prefix = prefixIcon, colors = textFieldColors
         )
     }

@@ -1,10 +1,11 @@
-package com.testing.librarymanagementsystem.database
+package com.testing.librarymanagementsystem.database.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+import com.testing.librarymanagementsystem.database.BookDetailModel
 import kotlinx.coroutines.flow.Flow
 
 @Dao

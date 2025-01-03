@@ -30,4 +30,9 @@
     <string name="save">Save</string>
     <string name="please_sign_up_here">Please Signup Here</string>
     <string name="submit_credentials">Submit Credential</string>
+    <string name="if_you_new_user_please_click_on_signup_here">If you are new user please click on signup here first.</string>
+    <string name="signup_here">Signup Here</string>
+    <string name="upload_pdfs_videos_here">Uplaod PDFs and Videos here...</string>
+    <string name="upload_pdfs">Upload Pdfs:</string>
+    <string name="upload_videos">Upload Videos</string>
 </resources>
